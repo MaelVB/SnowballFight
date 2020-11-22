@@ -45,7 +45,6 @@ namespace SnowballFight.Items
         {
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(ItemID.Snowball, 1);
-            recipe.AddTile(TileID.WorkBenches);
             recipe.SetResult(this, 2);
             recipe.AddRecipe();
         }
