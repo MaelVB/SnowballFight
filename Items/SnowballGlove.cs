@@ -1,3 +1,4 @@
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -15,7 +16,7 @@ namespace SnowballFight.Items
         public override void SetDefaults()
         {
             item.damage = 5;
-            item.width = 24;
+            item.width = 28;
             item.height = 26;
             item.useTime = 20;
             item.useAnimation = 20;
@@ -25,6 +26,9 @@ namespace SnowballFight.Items
             item.rare = 2;
             item.UseSound = SoundID.Item1;
             item.autoReuse = true;
+
+            item.noMelee = true;
+            item.noUseGraphic = true;
 
             item.shoot = 1;
             item.shootSpeed = 8;
@@ -43,9 +47,21 @@ namespace SnowballFight.Items
             recipe.AddRecipe();
         }
 
-        public override void UpdateInventory (Player player)
-        {
-
-        }
+        /**
+        * My item has the noUseGraphic property because I don't want it to be displayed.
+        * But because of this property I can't call the method MeleeEffects.
+        * So, in order to have an effect when I use my item, I call the OnConsummeAmmo method.
+        */
+        public override void OnConsumeAmmo(Player player) {
+            const int NUM_DUSTS = 5;
+            float posX = player.position.X;
+            float posY = player.position.Y;
+            for (int i = 0; i < NUM_DUSTS; i++)
+            {
+                Dust.NewDust(new Vector2(posX, posY), item.width, item.height, 192, 0f, 0f, 100, new Color(255,255,255));
+                posX--;
+                posY--;
+            }
+		}
     }
 }
