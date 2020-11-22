@@ -35,8 +35,10 @@ namespace SnowballFight.Items
         public override void AddRecipes()
         {
             ModRecipe recipe = new ModRecipe(mod);
-            recipe.AddIngredient(ItemID.DirtBlock, 10);
-            recipe.AddTile(TileID.WorkBenches);
+            recipe.AddIngredient(ItemID.AleThrowingGlove, 1);
+            // recipe.AddIngredient(ItemID.FlinxFur, 5); // WAITING FOR TMODLOADER UPDATE FOR 1.4.1
+            recipe.AddIngredient(ItemID.Silk, 3);
+            recipe.AddTile(TileID.Loom);
             recipe.SetResult(this);
             recipe.AddRecipe();
         }
