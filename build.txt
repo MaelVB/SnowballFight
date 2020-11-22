@@ -1,0 +1,3 @@
+displayName = Snowball Fight
+author = Alsy
+version = 0.1
