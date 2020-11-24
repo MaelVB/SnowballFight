@@ -3,9 +3,9 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace SnowballFight.Items
+namespace SnowballFight.Items.Snowballs
 {
-    public class SnowballWithStone : ModItem
+    public class SnowballWithBone : ModItem
     {
         public override void SetStaticDefaults()
         {
@@ -15,7 +15,9 @@ namespace SnowballFight.Items
 
         public override void SetDefaults()
         {
-            item.damage = 15;
+            item.damage = 25;
+            item.knockBack = 6.0f;
+            
             item.width = 20;
             item.height = 20;
 
@@ -23,14 +25,13 @@ namespace SnowballFight.Items
             item.useTime = 20;
             item.useAnimation = 20;
             item.useStyle = 1;
-            item.knockBack = 6.0f;
 
-            item.value = 10000;
-            item.rare = 2;
+            item.value = 50;
+            item.rare = ItemRarityID.White;
             item.UseSound = SoundID.Item1;
             item.autoReuse = false;
 
-            item.shoot = ModContent.ProjectileType<SnowballWithStoneProjectile>();
+            item.shoot = ModContent.ProjectileType<SnowballWithBoneProjectile>();
             item.shootSpeed = 8f;
             item.consumable = true;
             item.maxStack = 999;
@@ -45,7 +46,7 @@ namespace SnowballFight.Items
         {
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(ItemID.Snowball, 2);
-            recipe.AddIngredient(ItemID.StoneBlock, 1);
+            recipe.AddIngredient(ItemID.Bone, 1);
             recipe.AddTile(TileID.WorkBenches);
             recipe.SetResult(this, 1);
             recipe.AddRecipe();

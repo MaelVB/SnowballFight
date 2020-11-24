@@ -15,13 +15,14 @@ namespace SnowballFight.Projectiles
         public override void SetDefaults()
         {
             projectile.damage = 15;
+            projectile.knockBack = 6.0f;
+            
             projectile.width = 20;
             projectile.height = 20;
 
             projectile.aiStyle = 2;
             projectile.ranged = true;
             projectile.friendly = true;
-            projectile.knockBack = 6.0f;
         }
 
         public override bool OnTileCollide(Vector2 oldVelocity)
