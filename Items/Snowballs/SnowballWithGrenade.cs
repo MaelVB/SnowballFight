@@ -39,9 +39,8 @@ namespace SnowballFight.Items.Snowballs
             item.noMelee = true;
             item.noUseGraphic = true;
 
-            item.ammo = AmmoID.Snowball;
+            item.ammo = item.type; //No integration with gloves for the moment
         }
-
         public override void AddRecipes()
         {
             ModRecipe recipe = new ModRecipe(mod);

@@ -52,9 +52,10 @@ namespace SnowballFight.Items.Gloves
         /**
         * My item has the noUseGraphic property because I don't want it to be displayed.
         * But because of this property I can't call the method MeleeEffects.
-        * So, in order to have an effect when I use my item, I call the OnConsummeAmmo method.
+        * So, in order to have an effect when I use my item, I call the Shoot method.
         */
-        public override void OnConsumeAmmo(Player player) {
+        public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
+        {
             const int NUM_DUSTS = 5;
             float posX = player.position.X;
             float posY = player.position.Y;
@@ -64,6 +65,7 @@ namespace SnowballFight.Items.Gloves
                 posX--;
                 posY--;
             }
+            return true;
 		}
     }
 }

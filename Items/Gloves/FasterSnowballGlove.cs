@@ -49,7 +49,8 @@ namespace SnowballFight.Items.Gloves
             recipe.AddRecipe();
         }
 
-        public override void OnConsumeAmmo(Player player) {
+        public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
+        {
             const int NUM_DUSTS = 10;
             float posX = player.position.X;
             float posY = player.position.Y;
@@ -59,6 +60,7 @@ namespace SnowballFight.Items.Gloves
                 posX--;
                 posY--;
             }
+            return true;
 		}
     }
 }
