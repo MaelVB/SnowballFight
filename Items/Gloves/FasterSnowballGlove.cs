@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 
 namespace SnowballFight.Items.Gloves
 {
-    public class FasterSnowballGlove : ModItem
+    public class FasterSnowballGlove : SnowballGloves
     {
         public override void SetStaticDefaults()
         {
@@ -24,7 +24,7 @@ namespace SnowballFight.Items.Gloves
             item.useAnimation = 16;
             item.useStyle = 1;
             item.knockBack = 2;
-            item.value = 65000;
+            item.value = Item.sellPrice(silver: 130);
             item.rare = ItemRarityID.Orange;
             item.UseSound = SoundID.Item1;
             item.autoReuse = true;
@@ -49,18 +49,9 @@ namespace SnowballFight.Items.Gloves
             recipe.AddRecipe();
         }
 
-        public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
+        public override int DustsNumber()
         {
-            const int NUM_DUSTS = 10;
-            float posX = player.position.X;
-            float posY = player.position.Y;
-            for (int i = 0; i < NUM_DUSTS; i++)
-            {
-                Dust.NewDust(new Vector2(posX, posY), item.width, item.height, 192, 0f, 0f, 50, new Color(255,255,255));
-                posX--;
-                posY--;
-            }
-            return true;
-		}
+            return 10;
+        }
     }
 }

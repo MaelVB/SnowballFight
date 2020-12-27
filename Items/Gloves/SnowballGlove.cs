@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 
 namespace SnowballFight.Items.Gloves
 {
-    public class SnowballGlove : ModItem
+    public class SnowballGlove : SnowballGloves
     {
         public override void SetStaticDefaults()
         {
@@ -24,7 +24,7 @@ namespace SnowballFight.Items.Gloves
             item.useAnimation = 22;
             item.useStyle = 1;
             item.knockBack = 1;
-            item.value = 10000;
+            item.value = Item.sellPrice(silver: 20);
             item.rare = ItemRarityID.Green;
             item.UseSound = SoundID.Item1;
             item.autoReuse = true;
@@ -48,24 +48,5 @@ namespace SnowballFight.Items.Gloves
             recipe.SetResult(this);
             recipe.AddRecipe();
         }
-
-        /**
-        * My item has the noUseGraphic property because I don't want it to be displayed.
-        * But because of this property I can't call the method MeleeEffects.
-        * So, in order to have an effect when I use my item, I call the Shoot method.
-        */
-        public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
-        {
-            const int NUM_DUSTS = 5;
-            float posX = player.position.X;
-            float posY = player.position.Y;
-            for (int i = 0; i < NUM_DUSTS; i++)
-            {
-                Dust.NewDust(new Vector2(posX, posY), item.width, item.height, 192, 0f, 0f, 50, new Color(255,255,255));
-                posX--;
-                posY--;
-            }
-            return true;
-		}
     }
 }

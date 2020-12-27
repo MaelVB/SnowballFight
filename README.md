@@ -1,5 +1,5 @@
 # SnowballFight
-A Terraria Mod made with tModLauncher
+A Terraria Mod made with tModLoader
 
 This is my first Terraria Mod.
 
@@ -8,6 +8,9 @@ Items added for the moment :
 - Small Snowball
 - Big Snowball
 - Snowball with a stone
+- Snowball with a bone
+- Faster Snowball Glove
+- Hidden Glove Pocket
 
 TODO : 
 Accessoire : Hidden Glove Pocket : permet un double shoot à chaque tir

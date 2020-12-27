@@ -26,7 +26,7 @@ namespace SnowballFight.Items.Snowballs
             item.useAnimation = 40;
             item.useStyle = 1;
 
-            item.value = 75;
+            item.value = Item.sellPrice(copper: 15);
             item.rare = ItemRarityID.White;
             item.UseSound = SoundID.Item1;
             item.autoReuse = false;
