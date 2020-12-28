@@ -20,6 +20,5 @@ namespace SnowballFight
         {
             gloveAccessories = new List<string>();
         }
-        
     }
 }
