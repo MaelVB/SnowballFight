@@ -9,8 +9,7 @@ namespace SnowballFight.Items.Snowballs
     {
         public override void SetStaticDefaults()
         {
-            // DisplayName.SetDefault("TutorialSword"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
-            Tooltip.SetDefault("A snowball with a stone");
+            Tooltip.SetDefault("A snowball with a grenade");
         }
 
         public override void SetDefaults()
@@ -39,13 +38,14 @@ namespace SnowballFight.Items.Snowballs
             item.noMelee = true;
             item.noUseGraphic = true;
 
-            item.ammo = item.type; //No integration with gloves for the moment
+            item.ammo = AmmoID.Snowball;
         }
         public override void AddRecipes()
         {
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(ItemID.Snowball, 2);
             recipe.AddIngredient(ItemID.Grenade, 1);
+            recipe.AddIngredient(ItemID.ExplosivePowder, 1);
             recipe.AddTile(TileID.WorkBenches);
             recipe.SetResult(this, 1);
             recipe.AddRecipe();
