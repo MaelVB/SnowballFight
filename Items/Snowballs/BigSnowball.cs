@@ -40,7 +40,6 @@ namespace SnowballFight.Items.Snowballs
 
             item.ammo = AmmoID.Snowball;
         }
-
         public override void AddRecipes()
         {
             ModRecipe recipe = new ModRecipe(mod);
