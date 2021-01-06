@@ -21,8 +21,8 @@ namespace SnowballFight.Items.Snowballs
             item.height = 10;
 
             item.ranged = true;
-            item.useTime = 20;
-            item.useAnimation = 20;
+            item.useTime = 17;
+            item.useAnimation = 17;
             item.useStyle = 1;
 
             item.value = 0;
