@@ -15,7 +15,6 @@ namespace SnowballFight
     class SnowballFightPlayer : ModPlayer
     {
         public List<string> gloveAccessories = new List<string>();
-
         public override void ResetEffects()
         {
             gloveAccessories = new List<string>();

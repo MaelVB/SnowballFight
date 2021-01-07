@@ -3,22 +3,22 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace SnowballFight.Projectiles
+namespace SnowballFight.Projectiles.Snowballs
 {
-    public class BigSnowballProjectile : ModProjectile
+    public class SnowballWithStoneProjectile : ModProjectile
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("A big but slower snowball");
+            DisplayName.SetDefault("A snowball with a stone");
         }
 
         public override void SetDefaults()
         {
-            projectile.damage = 20;
-            projectile.knockBack = 6.5f;
+            projectile.damage = 15;
+            projectile.knockBack = 6.0f;
             
-            projectile.width = 30;
-            projectile.height = 30;
+            projectile.width = 20;
+            projectile.height = 20;
 
             projectile.aiStyle = 2;
             projectile.ranged = true;
@@ -28,8 +28,9 @@ namespace SnowballFight.Projectiles
         public override bool OnTileCollide(Vector2 oldVelocity)
         {
             Main.PlaySound(SoundID.Item51, projectile.position);
+            Main.PlaySound(SoundID.Dig, projectile.position);
 
-            const int NUM_DUSTS = 20;
+            const int NUM_DUSTS = 10;
             float posX = projectile.position.X;
             float posY = projectile.position.Y;
             for (int i = 0; i < NUM_DUSTS; i++)

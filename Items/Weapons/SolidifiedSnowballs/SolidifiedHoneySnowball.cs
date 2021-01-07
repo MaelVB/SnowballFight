@@ -3,7 +3,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace SnowballFight.Items.SolidifiedSnowballs
+namespace SnowballFight.Items.Weapons.SolidifiedSnowballs
 {
     public class SolidifiedHoneySnowball : ModItem
     {

@@ -1,10 +1,10 @@
-using SnowballFight.Items.SolidifiedSnowballs;
+using SnowballFight.Items.Weapons.SolidifiedSnowballs;
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace SnowballFight.Items
+namespace SnowballFight.Items.SnowballCannons
 {
     public class SnowballCannon : GlobalItem
     {

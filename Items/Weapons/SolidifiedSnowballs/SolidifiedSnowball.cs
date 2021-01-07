@@ -3,7 +3,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace SnowballFight.Items.SolidifiedSnowballs
+namespace SnowballFight.Items.Weapons.SolidifiedSnowballs
 {
     public class SolidifiedSnowball : ModItem
     {
@@ -22,7 +22,7 @@ namespace SnowballFight.Items.SolidifiedSnowballs
 
             item.ranged = true;
 
-            item.value = 0;
+            item.value = Item.sellPrice(copper: 1);
             item.rare = ItemRarityID.White;
             item.UseSound = SoundID.Item1;
 

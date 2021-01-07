@@ -3,9 +3,9 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace SnowballFight.Projectiles
+namespace SnowballFight.Projectiles.Snowballs
 {
-    public class SnowballWithBoneProjectile : ModProjectile
+    public class SnowballWithGrenadeProjectile : ModProjectile
     {
         public override void SetStaticDefaults()
         {
@@ -14,9 +14,9 @@ namespace SnowballFight.Projectiles
 
         public override void SetDefaults()
         {
-            projectile.damage = 25;
-            projectile.knockBack = 6.0f;
-            
+            projectile.damage = 65;
+            projectile.knockBack = 8.0f;
+
             projectile.width = 20;
             projectile.height = 20;
 

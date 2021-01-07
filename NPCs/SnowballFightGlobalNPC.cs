@@ -1,4 +1,6 @@
 using SnowballFight.Items.Accessories;
+using SnowballFight.Items.Weapons.SolidifiedSnowballs;
+using SnowballFight.Items.Weapons.SnowballCannons;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -16,8 +18,21 @@ namespace SnowballFight.NPCs
 					npc = Main.npc[k];
 					k++;
 				}
+				// TODO : tests between this method...
 				if(Main.player[(int)Player.FindClosest(npc.position, npc.width, npc.height)].ZoneRockLayerHeight) {
 					shop.item[nextSlot].SetDefaults(ModContent.ItemType<TornHiddenPocket>());
+					nextSlot++;
+				}
+			} else if (type == NPCID.ArmsDealer && (Main.LocalPlayer.HasItem(ItemID.SnowballCannon) || Main.LocalPlayer.HasItem(ModContent.ItemType<IllegalSnowballCannon>()))) {
+				NPC npc = new NPC();
+				int k = 0;
+				while (npc.type != NPCID.ArmsDealer) {
+					npc = Main.npc[k];
+					k++;
+				}
+				// ...and this
+				if(Main.LocalPlayer.ZoneSnow) {
+					shop.item[nextSlot].SetDefaults(ModContent.ItemType<SolidifiedSnowball>());
 					nextSlot++;
 				}
 			} else if (type == NPCID.SkeletonMerchant && Main.bloodMoon) {

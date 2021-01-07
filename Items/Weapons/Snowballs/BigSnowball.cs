@@ -1,9 +1,9 @@
-using SnowballFight.Projectiles;
+using SnowballFight.Projectiles.Snowballs;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace SnowballFight.Items.Snowballs
+namespace SnowballFight.Items.Weapons.Snowballs
 {
     public class BigSnowball : ModItem
     {
